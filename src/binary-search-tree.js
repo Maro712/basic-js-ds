@@ -67,6 +67,12 @@ class BinarySearchTree {
     return node
   }
 
+  findMinNode(node) {
+    return node.left === null
+      ? node
+      : this.findMinNode(node.left)
+  }
+
   min() {
     return this.findMinNode(this.rootNode).data
   }
